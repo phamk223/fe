@@ -1,1 +1,14 @@
-{"name":"english-academy-web","private":true,"version":"1.0.0","type":"module","engines":{"node":">=22"},"scripts":{"start":"node server.mjs","test":"node --test test/*.test.mjs","check":"node --check public/app.js && node --check public/core.js && node --check server.mjs"}}
+{
+  "name": "english-academy-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check public/app.js && node --check public/core.js && node --check public/academy.js && node --check server.mjs"
+  }
+}
