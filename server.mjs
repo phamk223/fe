@@ -2,7 +2,7 @@ import http from 'node:http';
 import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 const backend=new URL(process.env.API_ORIGIN||'http://127.0.0.1:3000');
-const files={'/':['index.html','text/html; charset=utf-8'],'/app.js':['app.js','text/javascript; charset=utf-8'],'/core.js':['core.js','text/javascript; charset=utf-8'],'/academy.js':['academy.js','text/javascript; charset=utf-8'],'/style.css':['style.css','text/css; charset=utf-8'],'/academy.css':['academy.css','text/css; charset=utf-8']};
+const files={'/':['index.html','text/html; charset=utf-8'],'/app.js':['app.js','text/javascript; charset=utf-8'],'/core.js':['core.js','text/javascript; charset=utf-8'],'/academy.js':['academy.js','text/javascript; charset=utf-8'],'/style.css':['style.css','text/css; charset=utf-8'],'/academy.css':['academy.css','text/css; charset=utf-8'],'/admin.js':['admin.js','text/javascript; charset=utf-8'],'/admin.css':['admin.css','text/css; charset=utf-8']};
 export function createServer(){return http.createServer(async(req,res)=>{
  res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','same-origin');res.setHeader('Cache-Control','no-store');
  res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob:; media-src 'self' blob:; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");

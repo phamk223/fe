@@ -1,5 +1,12 @@
 export const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const isStaff=user=>user?.roles?.some(r=>['ADMIN','TEACHER'].includes(r));
+export function personPayload(form,editing=false){
+ const body=Object.fromEntries(form);
+ for(const key of ['email','code'])if(typeof body[key]==='string'&&!body[key].trim()){
+  if(editing)body[key]=null;else delete body[key];
+ }
+ return body;
+}
 export function questionPayload(type,prompt,choices,key){
  const lines=s=>s.split('\n').map(s=>s.trim()).filter(Boolean);
  const base={type,prompt,options:[],answerKey:{}};

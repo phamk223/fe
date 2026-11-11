@@ -1,7 +1,8 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {escapeHtml,questionPayload,answerPayload,isStaff,errorMessage} from '../public/core.js';
+import {escapeHtml,questionPayload,answerPayload,isStaff,errorMessage,personPayload} from '../public/core.js';
 import {createServer} from '../server.mjs';
+test('blank optional profile fields are omitted on creation and cleared with null on updates',()=>{const f=new FormData();f.set('displayName','Preview');f.set('code','STU-01');f.set('email','');assert.deepEqual(personPayload(f),{displayName:'Preview',code:'STU-01'});assert.deepEqual(personPayload(f,true),{displayName:'Preview',code:'STU-01',email:null});f.set('code','  ');assert.equal(personPayload(f,true).code,null);f.set('email','preview@example.com');assert.equal(personPayload(f,true).email,'preview@example.com');});
 test('untrusted text is escaped and permissions distinguish students',()=>{assert.equal(escapeHtml('<img onerror="x">'), '&lt;img onerror=&quot;x&quot;&gt;');assert.equal(isStaff({roles:['STUDENT']}),false);assert.equal(isStaff({roles:['ADMIN']}),true);});
 test('question authoring enforces valid option indexes and matching content',()=>{assert.deepEqual(questionPayload('CHOOSE_CORRECT','Q','A\nB','2').answerKey,{correctOptionIndexes:[1]});assert.throws(()=>questionPayload('CHOOSE_CORRECT','Q','A\nB','3'));assert.throws(()=>questionPayload('CHOOSE_CORRECT','Q','A\nB','1,2'));assert.deepEqual(questionPayload('MATCHING','Q','','cat = mèo\ndog = chó').content.left,['cat','dog']);assert.throws(()=>questionPayload('TRUE_FALSE','Q','','yes'));});
 test('student payload contains answers only, including false and empty selection',()=>{const f=new FormData();f.set('q','false');assert.deepEqual(answerPayload({id:'q',type:'TRUE_FALSE'},f),{value:false});assert.deepEqual(answerPayload({id:'missing',type:'MULTIPLE_CHOICE'},f),{selectedOptionIds:[]});assert.equal(answerPayload({id:'missing',type:'TRUE_FALSE'},f),null);});

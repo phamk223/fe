@@ -41,7 +41,7 @@ test('static assets remain restricted to public image/font paths',async()=>{
   const server=createServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));
   const base='http://127.0.0.1:'+server.address().port;
   try{
-    for(const path of ['/academy.js','/academy.css','/assets/logo.jpg','/assets/be-vietnam-regular.ttf'])assert.equal((await fetch(base+path)).status,200,path);
+    for(const path of ['/academy.js','/academy.css','/admin.js','/admin.css','/assets/logo.jpg','/assets/be-vietnam-regular.ttf'])assert.equal((await fetch(base+path)).status,200,path);
     for(const path of ['/assets/.env','/assets/%2e%2e/server.mjs','/server.mjs','/assets/missing.jpg'])assert.equal((await fetch(base+path)).status,404,path);
   }finally{await new Promise(r=>server.close(r));}
 });
