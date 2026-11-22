@@ -45,7 +45,8 @@ function shell(route){
  app.className=staff?'admin-app':'student-app';document.body.dataset.surface=staff?'admin':'academy';
  app.innerHTML=staff?adminShell(session.user,route):studentShell(session.user,route);
  $('#logout').onclick=logout;
- if(staff){$('.admin-skip').onclick=ev=>{ev.preventDefault();$('#content').focus();$('#content').scrollIntoView();};bindAdminMenu();}
+ $('.admin-skip,.desk-skip').onclick=ev=>{ev.preventDefault();$('#content').focus();$('#content').scrollIntoView();};
+ if(staff)bindAdminMenu();
 }
 function bindAdminMenu(){
  const menu=$('#admin-menu'),sidebar=$('#admin-sidebar'),main=$('.admin-main');

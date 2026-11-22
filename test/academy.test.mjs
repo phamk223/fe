@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {hasAnswer,studentDashboard,studentAssignments,studentProfile,studentAttempt,assignmentCard,publicPage,contact} from '../public/academy.js';
+import {hasAnswer,studentShell,studentDashboard,studentAssignments,studentProfile,studentAttempt,assignmentCard,publicPage,contact} from '../public/academy.js';
 import {createServer} from '../server.mjs';
 
 test('answer count recognizes false and ignores cleared answers',()=>{
@@ -19,8 +19,22 @@ test('student pages use backend totals, escape content, and handle an empty acco
   assert.match(filled,/Nghe hiểu/);
   assert.doesNotMatch(studentProfile(user),/<img onerror/);
   const legacy=assignmentCard({examId:'legacy',title:'Writing',versionNumber:1,sections:[{id:'section-without-type'}]});
-  assert.match(legacy,/Hello!/);
+  assert.match(legacy,/Bài luyện tập/);
   assert.doesNotMatch(legacy,/Read\.|Đọc hiểu/);
+  const dashboard=studentDashboard(user,{data:[{examId:'abc',title:'One visible exam',versionNumber:1}],meta:{pagination:{total:17}}});
+  assert.match(dashboard,/17 bài được giao/);
+  assert.match(dashboard,/Xem tất cả 17 bài/);
+  assert.match(dashboard,/data-action="start:abc"/);
+  assert.doesNotMatch(dashboard,/<img onerror/);
+});
+
+test('learning desk keeps app integration targets and identifies the selected navigation',()=>{
+  const html=studentShell({username:'<unsafe>'},'assignments');
+  assert.equal((html.match(/id="content"/g)||[]).length,1);
+  assert.equal((html.match(/id="logout"/g)||[]).length,1);
+  assert.match(html,/<a href="#\/assignments" aria-current="page">/);
+  assert.match(html,/tabindex="-1"/);
+  assert.doesNotMatch(html,/<unsafe>/);
 });
 
 test('submitted answers are locked and pending grades are distinguished from final scores',()=>{
