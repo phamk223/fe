@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {hasAnswer,studentDashboard,studentAssignments,studentProfile,studentAttempt,publicPage,contact} from '../public/academy.js';
+import {hasAnswer,studentDashboard,studentAssignments,studentProfile,studentAttempt,assignmentCard,publicPage,contact} from '../public/academy.js';
 import {createServer} from '../server.mjs';
 
 test('answer count recognizes false and ignores cleared answers',()=>{
@@ -18,6 +18,9 @@ test('student pages use backend totals, escape content, and handle an empty acco
   assert.match(filled,/&lt;script&gt;/);
   assert.match(filled,/Nghe hiểu/);
   assert.doesNotMatch(studentProfile(user),/<img onerror/);
+  const legacy=assignmentCard({examId:'legacy',title:'Writing',versionNumber:1,sections:[{id:'section-without-type'}]});
+  assert.match(legacy,/Hello!/);
+  assert.doesNotMatch(legacy,/Read\.|Đọc hiểu/);
 });
 
 test('submitted answers are locked and pending grades are distinguished from final scores',()=>{
@@ -42,6 +45,9 @@ test('static assets remain restricted to public image/font paths',async()=>{
   const base='http://127.0.0.1:'+server.address().port;
   try{
     for(const path of ['/academy.js','/academy.css','/admin.js','/admin.css','/assets/logo.jpg','/assets/be-vietnam-regular.ttf'])assert.equal((await fetch(base+path)).status,200,path);
+    const illustration=await fetch(base+'/assets/kids-adventure.png');
+    assert.equal(illustration.status,200);
+    assert.equal(illustration.headers.get('content-type'),'image/png');
     for(const path of ['/assets/.env','/assets/%2e%2e/server.mjs','/server.mjs','/assets/missing.jpg'])assert.equal((await fetch(base+path)).status,404,path);
   }finally{await new Promise(r=>server.close(r));}
 });

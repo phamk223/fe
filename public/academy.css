@@ -330,7 +330,7 @@ body[data-surface=academy] #toast{background:var(--ea-ink);color:#fff8e7}
   .ea-brand{font-size:11px;gap:8px}.ea-brand small{font-size:7px;letter-spacing:.2em}.ea-logo{width:43px;height:43px}.ea-mark{width:38px;height:38px}.ea-mark .icon{width:25px;height:25px}.header-inner{gap:10px;min-height:72px}.portal-link .icon{display:none}.portal-link.ea-button{font-size:9px;padding:8px 10px;min-height:35px}.ea-menu{min-width:32px;padding:0}
   .home-hero{grid-template-columns:1fr;gap:30px;padding-block:35px 44px}.hero-copy h1{font-size:48px;line-height:1.18;margin:17px 0}.hero-copy h1 br:last-of-type{display:none}.hero-copy h1>span:after{content:' '}.hero-copy>p{font-size:12px;max-width:390px}.ea-eyebrow{font-size:8px;letter-spacing:.12em}.hero-buttons{gap:17px;margin-top:23px}.hero-buttons .ea-button{font-size:10px;padding:12px 14px;min-height:44px}.hero-buttons .ea-text-link{font-size:10px}.hero-signoff{display:none}.hero-visual{padding:10px 0 15px 10px;margin:0 5px 0 8px}.hero-photo{height:280px;border-top-left-radius:80px}.hero-visual:before{border-top-left-radius:90px}.hero-star{font-size:70px;right:-12px;top:-15px}.photo-label{left:-16px;bottom:28px;padding:12px 15px}.photo-label strong{font-size:12px}.photo-caption{bottom:-4px}
   .value-strip>.ea-container{gap:19px;padding-block:23px}.value-strip>.ea-container>div{padding-left:0;gap:10px;font-size:9px}.value-strip strong{font-size:9px}.value-strip .icon{width:23px;height:23px}
-  .ea-section{padding-block:42px}.ea-section-title{margin-bottom:23px}.ea-section-title h2{font-size:27px}.ea-section-title p{font-size:11px}.program-grid{grid-template-columns:1fr;gap:23px}.program-image{height:210px}.program-body{padding:23px}.program-body h3{font-size:20px}.program-body>p{font-size:12px}.program-image>span{font-size:9px;left:20px}.program-bottom{margin-top:22px}.program-bottom strong{font-size:13px}.program-body>small{font-size:10px}.catalog-note{font-size:9px!important}
+  .ea-section{padding-block:42px}.ea-section-title{margin-bottom:23px}.ea-section-title h2{font-size:27px}.ea-section-title p{font-size:11px}.program-grid{grid-template-columns:minmax(0,1fr);gap:23px}.program-image{height:210px}.program-body{padding:23px}.program-body h3{font-size:20px}.program-body>p{font-size:12px}.program-image>span{font-size:9px;left:20px}.program-bottom{margin-top:22px}.program-bottom strong{font-size:13px}.program-body>small{font-size:10px}.catalog-note{font-size:9px!important}
   .approach-section{padding-block:42px}.approach-grid{grid-template-columns:1fr;gap:35px}.approach-photo{height:280px}.approach-photo>span{font-size:21px}.approach-grid h2{font-size:29px}.approach-grid>div>p{font-size:12px}.approach-point p{font-size:11px}
   .contact-banner{flex-direction:column;align-items:start;padding:26px;margin-block:40px;gap:20px}.contact-banner h2{font-size:25px}.contact-banner .ea-eyebrow{font-size:7px}.contact-banner p{font-size:11px}.contact-banner>.ea-button{width:100%;min-height:43px;font-size:11px}
   .ea-footer{padding-top:35px}.footer-grid{grid-template-columns:1fr 1fr;gap:30px 20px}.footer-grid>div:first-child{grid-column:1/-1}.ea-footer .ea-brand{font-size:13px}.ea-footer .ea-logo{width:44px;height:44px}.ea-footer .ea-brand small{font-size:8px}.ea-footer p,.footer-grid>div>a:not(.ea-brand){font-size:10px}.ea-footer h3{font-size:11px}.footer-bottom{flex-direction:column;gap:9px;font-size:8px;margin-top:25px;padding-block:20px}
@@ -348,4 +348,118 @@ body[data-surface=academy] #toast{background:var(--ea-ink);color:#fff8e7}
   :root{--ea-travel:0px;--ea-press:1}
   .program-card:hover,.program-image:hover img{transform:none}
   .loading:before{animation:none!important}
+}
+
+/* Primary-school surfaces share the gold brand, with playful sky, mint and coral accents. */
+body[data-surface=academy]{--ea-ink:#203a50;--ea-muted:#536575;--ea-border:#dde7e9;--ea-blue:#246387;background:#fffefa;font-size:16px}
+.public-app,.student-app{color:var(--ea-ink)}
+body[data-surface=academy] .ea-button{border-radius:14px;min-height:48px;font-size:14px;padding:13px 20px;box-shadow:0 3px 0 #d6a82e}
+body[data-surface=academy] .ea-button.outline{background:#fff;box-shadow:0 3px 0 #e1e9ed;border-color:#cedce3}
+body[data-surface=academy] .ea-text-link{font-size:14px}
+body[data-surface=academy] .ea-eyebrow{color:#5a633b;font-size:11px;letter-spacing:.1em}
+body[data-surface=academy] .ea-nav a{font-size:14px;color:#42576a;min-height:44px}
+body[data-surface=academy] .round-icon{background:#ffedb0;color:#644e15}
+body[data-surface=academy] .icon-button{min-width:44px;min-height:44px}
+.announcement{font-size:12px;background:#fff1bd}
+.kids-hero{background:radial-gradient(ellipse at 85% 25%,#e8f5fa 0,transparent 48%),#fff9e9;border-bottom:1px solid #f2e7c8}
+.home-hero{gap:35px;grid-template-columns:1fr 1.1fr;padding-block:55px 65px;min-height:565px}
+.kids-kicker{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.08em;font-weight:700;color:#476346;background:#e8f2df;border:1px solid #d7e8c9;border-radius:24px;padding:9px 13px}
+.kids-kicker .icon{width:18px;height:18px}
+.hero-copy h1{font-size:clamp(38px,4.1vw,60px);line-height:1.22;letter-spacing:-.055em;margin:22px 0}
+.hero-copy h1>span{color:#167b79;position:relative;white-space:nowrap;background:linear-gradient(transparent 76%,#ffe38a 76%,#ffe38a 96%,transparent 96%)}
+.hero-copy>p{font-size:16px;max-width:450px;line-height:1.9}
+.hero-buttons{gap:13px;margin-top:28px}
+.hero-skills{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.hero-skills span{font-size:12px;font-weight:600;border:1px solid #dddfcc;background:#fff;padding:6px 14px;border-radius:20px;color:#46616d}
+.hero-skills span:nth-child(2){background:#e6f4eb}.hero-skills span:nth-child(3){background:#e8f2ff}.hero-skills span:nth-child(4){background:#ffe9de}
+.hero-visual{padding:24px 0 30px;min-width:0}
+.hero-visual:before{inset:25px -6px 25px 10px;border-radius:80px 80px 100px 40px;background:#ffe59b;transform:rotate(4deg)}
+.hero-photo{height:auto;aspect-ratio:1.45;border-radius:65px 65px 80px 35px;border:6px solid #fff;box-shadow:0 14px 30px #203a500c}
+.hero-photo img{object-fit:cover;width:100%;height:100%;object-position:center}
+.hello-sticker{position:absolute;z-index:2;top:0;right:16px;background:#fff;border:2px solid #d0e8ee;border-radius:16px 16px 4px 16px;padding:12px 20px;color:#246387;font-size:18px;font-weight:700;transform:rotate(5deg);box-shadow:0 5px 0 #d2e6eb}
+.photo-label{left:-15px;bottom:10px;border:1px solid #e8e3cd;border-radius:17px;padding:14px 18px;font-size:11px;box-shadow:0 7px 0 #eee5c1}
+.photo-label strong{font-size:14px}.photo-caption{font-size:8px;letter-spacing:.08em;bottom:-16px;right:6px;color:#536575}
+.value-strip{background:#fff;border-color:#e7eeee}
+.value-strip>.ea-container{padding-block:27px}
+.value-strip>.ea-container>div{font-size:12px;gap:14px}
+.value-strip strong{font-size:13px;color:var(--ea-ink)}
+.value-strip .icon{width:38px;height:38px;padding:8px;border-radius:12px;box-sizing:content-box;background:#fff0bd;color:#775d1d}
+.value-strip>.ea-container>div:nth-child(2) .icon{background:#e3f2fa;color:#286284}
+.value-strip>.ea-container>div:nth-child(3) .icon{background:#e4f3e7;color:#37634c}
+.value-strip>.ea-container>div:nth-child(4) .icon{background:#ffeadf;color:#885238}
+.ea-section-title h2{font-size:34px;margin-top:12px}.ea-section-title p{font-size:15px}
+.program-card{border-radius:23px;border-color:#dfe8ea;box-shadow:0 5px 0 #edf1ed;overflow:clip}
+.program-image{height:190px;background:#fff0ba;isolation:isolate}
+.program-image.blue{background:#e5f4ff}.program-image.pink{background:#e4f4e9}
+.program-image:after{inset:-40px -35px auto auto;width:170px;height:170px;border-radius:50%;background:#ffffff70;z-index:-1}
+.program-image>span{color:#4b5d62;font-size:10px;left:25px;bottom:18px;letter-spacing:.08em}
+.program-art{position:relative;height:100%;display:flex;align-items:center;padding:0 28px 25px;gap:18px;color:#7a5a16}
+.program-art b{font-size:49px;letter-spacing:-.06em;line-height:1;transform:rotate(-5deg);text-shadow:2px 3px #ffffff80}
+.program-art>.icon{width:72px;height:72px;stroke-width:1.3;transform:rotate(10deg);margin-left:auto;flex:none}
+.program-art i{position:absolute;right:22px;top:16px;font-size:27px;font-style:normal}
+.blue .program-art{color:#2c6b8b}.pink .program-art{color:#3e7856}.pink .program-art b{font-size:39px}
+.program-body{padding:26px}.program-body>small{font-size:11px}.program-body h3{font-size:22px}.program-body>p{font-size:14px}
+.program-bottom>span{font-size:12px}.program-bottom strong{font-size:14px}.round-link{width:44px;height:44px;background:#fff0b7;color:#5c4b22}
+.catalog-note{font-size:12px!important;color:#536575!important}
+.approach-section{background:#eff8f3}.approach-photo{height:420px;border-radius:35px;background:#fff8e8;overflow:hidden;border:5px solid #fff;box-shadow:0 8px 0 #d8e9dd}
+.approach-photo img{object-fit:contain;object-position:center}.approach-photo>span{border-radius:14px;background:#fffef7ef;color:#356857;font-size:23px;bottom:12px;left:15px}
+.approach-grid>div>p{font-size:15px}.approach-point{gap:15px}.approach-point>span{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;flex:none;background:#d5eada;color:#375f49;padding:0;font-size:13px;font-weight:700}
+.approach-point h3{font-size:17px}.approach-point p{font-size:14px}
+.contact-banner{border-radius:26px;border:2px solid #f4db8e;background:#fff3c9;padding:36px 40px;box-shadow:0 6px 0 #f8ecc7}.contact-banner p{font-size:14px}
+.ea-footer p,.footer-grid>div>a:not(.ea-brand){font-size:13px}.ea-footer h3{font-size:14px}.footer-bottom{font-size:11px}
+.detail-photo,.about-grid>img{object-fit:contain!important;background:#fff6e5;border-radius:25px}
+.program-detail-top{background:#eaf5fc}.program-detail-top p,.detail-section>p,.about-grid p,.contact-panel>p,.contact-guide ol{font-size:16px}
+.enroll-card,.contact-panel,.contact-guide,.about-location{border-radius:22px}.enroll-card>p,.enroll-card .check-list li,.check-list li,.about-location p,.contact-address p{font-size:14px}
+.enroll-card .fine-print{font-size:12px!important}.contact-address strong{font-size:14px}
+.academy-login{gap:65px;grid-template-columns:1fr 440px}.login-editorial h1 span{color:#167b79}.login-editorial>p{font-size:16px}.login-editorial>img{height:310px;object-fit:contain;background:#fff6e5;border-radius:25px}
+.academy-login-card{border-radius:25px;background:#fff;box-shadow:0 8px 0 #edf1e4;border:2px solid #eee6c8}
+.academy-login-card>p,.academy-login-card .field{font-size:14px}.academy-login-card input{font-size:16px;min-height:48px}.academy-login-card .login-help{font-size:13px}.academy-login-card .password-wrap button{font-size:13px;min-width:48px}
+.learner-subnav>.ea-container{font-size:12px}.learner-account>a{font-size:13px}.learner-account small{font-size:11px}
+.learner-welcome{border:1px solid #f0dfa5;border-radius:28px;padding:30px 38px;min-height:320px;background:#fff4d3;box-shadow:0 6px 0 #f5edcd;gap:20px}
+.learner-welcome>div:first-child{flex:1;min-width:0}.learner-welcome h1{font-size:33px;overflow-wrap:anywhere}.learner-welcome p{font-size:15px}
+.welcome-art{width:42%;height:260px;border-radius:27px;position:relative;background:#fff9e9}
+.welcome-art img{width:100%;height:100%;object-fit:contain;border-radius:27px}.welcome-sticker{position:absolute;right:10px;bottom:-9px;transform:rotate(-5deg);background:#e0f1fa;color:#285e7c;border:2px solid #fff;border-radius:14px;padding:9px 16px;font-size:16px;font-weight:700}
+.learning-card{border-radius:22px;box-shadow:0 5px 0 #edf0eb;overflow:clip}.learning-cover{height:160px;color:#74551b}.learning-grid>.learning-card:nth-child(3n+2) .learning-cover:is(.reading,.practice){background:#e5f4ff;color:#2c6581}.learning-grid>.learning-card:nth-child(3n) .learning-cover:is(.reading,.practice){background:#e4f4e9;color:#3c7051}
+.learning-cover-word{font-size:32px}.learning-cover-word em{opacity:1;font-size:22px;font-weight:600}.learning-cover>.icon{opacity:.8;stroke-width:1.2}.learning-cover-label{font-size:9px;opacity:1}
+.learning-card-body{padding:24px}.learning-card h3{font-size:19px;line-height:1.6}.skill-tags span,.skill-pill{font-size:12px;padding:6px 10px;border-radius:8px;color:#625022}.assignment-meta{font-size:13px}.learning-card-bottom{flex-wrap:wrap;gap:13px}.learning-card-bottom>span{font-size:12px}.learning-card-bottom .ea-button{font-size:13px;min-height:46px}
+.learner-page-title>p,.profile-card>p{font-size:15px}.learner-section-heading h2{font-size:26px}.assignment-heading{font-size:15px}.assignment-heading>span:last-child{font-size:12px}.assignment-tip{border-radius:16px}.assignment-tip p{font-size:14px}
+.student-empty{border-radius:22px;background:#f1f8fc;padding:35px;border:2px dashed #c9dde8}.student-empty h3{font-size:22px}.student-empty p{font-size:15px}
+.learning-guide{counter-reset:steps;border:0;gap:18px}.learning-guide>div{position:relative;padding:24px;background:#eaf4fc;border-radius:20px}.learning-guide>div:nth-child(2){background:#eaf4e8}.learning-guide>div:nth-child(3){background:#fff0e4}.learning-guide h3{font-size:16px}.learning-guide p,.learning-guide a{font-size:14px}.learning-guide .round-icon{width:40px;height:40px}
+.profile-card{border-radius:24px}.profile-card dl>div{font-size:15px}.profile-card dd{overflow-wrap:anywhere;min-width:0}
+.exam-title>p{font-size:16px}.exam-section{border-radius:20px;padding:30px}.exam-section .reading-passage{font-size:17px;line-height:1.95;border-radius:12px;background:#eff7fc;border-color:#7fb4d1}
+.exam-section .question h3{font-size:18px;line-height:1.8}.exam-section .question label.choice{font-size:16px;min-height:50px;padding:16px;border-radius:12px;gap:12px}.exam-section legend{font-size:13px}.question-heading,.question-heading small{font-size:12px;color:#536575}.exam-section textarea,.exam-section input,.exam-section select{font-size:16px}.exam-section input[type=radio],.exam-section input[type=checkbox]{width:20px;height:20px;accent-color:#287b79}
+.exam-navigator{border-radius:20px;background:#f2f8fc}.exam-navigator h2{font-size:17px}.exam-navigator>p{font-size:14px}.question-index{grid-template-columns:repeat(4,1fr)}.question-index button{min-height:44px;font-size:15px;border-radius:10px;background:#fff}.question-key{font-size:11px;flex-wrap:wrap}.exam-note>p{font-size:13px}
+.student-app .sticky-actions{border-radius:17px;padding:18px}.sticky-actions #save-state{font-size:13px;max-width:230px}.sticky-actions .ea-button{font-size:14px}.exam-result{border-radius:22px}.exam-result p{font-size:15px}.exam-result>strong{color:#5c4a1d}
+@media(hover:hover) and (pointer:fine){
+  .learning-card{transition:transform 220ms var(--ea-out),box-shadow 220ms var(--ea-out)}
+  .learning-card:hover{transform:translateY(-3px);box-shadow:0 8px 0 #e5ece7}
+  .program-card:hover .program-art>.icon{transform:rotate(0)}
+  .program-art>.icon{transition:transform 220ms var(--ea-out)}
+}
+@media(max-width:1100px){
+  .ea-brand{font-size:12px}.ea-nav{gap:18px}.home-hero{gap:25px}.hero-copy h1{font-size:45px}.hero-copy>p{font-size:15px}.hero-buttons .ea-button{font-size:13px;padding:12px 14px}.hello-sticker{font-size:15px}.program-art b{font-size:40px}.program-art>.icon{width:55px;height:55px}.pink .program-art b{font-size:32px}.program-body{padding:22px}.program-body h3{font-size:20px}.learning-card-bottom .ea-button{width:100%}.learner-welcome h1{font-size:29px}
+}
+@media(max-width:800px){
+  body[data-surface=academy] .ea-nav a{font-size:13px}.home-hero{grid-template-columns:1fr;max-width:650px;padding-block:40px 50px;gap:30px}.hero-copy h1{font-size:52px}.hero-copy>p{max-width:540px}.hero-visual{margin:0 15px}.hero-photo{aspect-ratio:1.6}.hero-skills{margin-top:23px}.value-strip>.ea-container>div{padding-left:0}.program-grid{grid-template-columns:1fr}.program-image{height:190px}.program-art{padding-inline:32px;justify-content:space-between}.program-art b{font-size:57px}.program-art>.icon{width:90px;height:90px;margin:0 20px}.pink .program-art b{font-size:48px}.program-body>p{font-size:15px}.approach-grid{grid-template-columns:1fr;gap:40px}.approach-photo{height:330px}.academy-login{grid-template-columns:1fr 1fr;gap:25px}.academy-login-card{padding:25px}.login-editorial h1{font-size:30px}.learner-welcome{padding:26px;gap:18px}.learner-welcome h1{font-size:27px}.welcome-art{width:38%;height:220px}.learner-welcome p{font-size:14px}.learner-section-heading h2{font-size:23px}.learning-card-bottom .ea-button{width:100%}.exam-navigator{order:0}.question-index{display:flex}.question-index button{min-width:44px}
+}
+@media(max-width:560px){
+  .ea-container{width:calc(100% - 36px)}.header-inner{min-height:76px}.ea-brand{font-size:10px;gap:7px}.ea-logo{width:42px;height:42px}.ea-brand small{font-size:7px}.ea-menu{min-width:44px;min-height:44px}.announcement>.ea-container{font-size:11px;min-height:34px}.portal-link.ea-button{font-size:12px;padding:9px 12px;min-height:44px}.portal-link .icon{display:none}
+  .home-hero{padding-block:30px 42px;gap:26px}.hero-copy h1{font-size:40px;line-height:1.24;margin:20px 0}.hero-copy h1 br{display:block!important}.hero-copy>p{font-size:15px}.kids-kicker{font-size:9px;padding:7px 10px}.hero-buttons{display:grid;grid-template-columns:1fr;gap:12px;margin-top:23px}.hero-buttons .ea-button{font-size:14px;min-height:48px}.hero-skills{gap:8px;margin-top:22px}.hero-skills span{font-size:12px;padding:6px 13px}.hero-visual{margin:0 3px;padding:22px 0 34px}.hero-photo{height:auto;aspect-ratio:1.4;border-radius:35px;border-width:4px}.hero-visual:before{border-radius:35px;inset:22px -3px 35px 5px}.hello-sticker{font-size:14px;padding:8px 14px;right:10px;top:0}.photo-label{left:-4px;bottom:12px;padding:10px 13px;gap:8px;font-size:10px}.photo-label strong{font-size:12px}.photo-label .round-icon{width:32px;height:32px}.photo-caption{font-size:7px;bottom:-9px;right:0}
+  .value-strip>.ea-container{gap:22px 12px;padding-block:25px}.value-strip>.ea-container>div{font-size:10px;gap:9px}.value-strip strong{font-size:11px}.value-strip .icon{width:23px;height:23px;padding:9px;border-radius:12px}.ea-section{padding-block:40px}.ea-section-title h2{font-size:29px}.ea-section-title p{font-size:14px}.program-body{padding:24px}.program-body h3{font-size:22px}.program-image>span{font-size:10px;left:24px}.program-art{padding-inline:24px;gap:10px}.program-art b{font-size:46px}.program-art>.icon{width:60px;height:60px;margin:0}.pink .program-art b{font-size:38px}.program-bottom>span{font-size:12px}.program-bottom strong{font-size:14px}.catalog-note{font-size:12px!important}
+  .approach-photo{height:270px;border-radius:24px}.approach-photo>span{font-size:19px;padding:12px 16px}.approach-grid h2{font-size:30px}.approach-grid>div>p,.approach-point p{font-size:14px}.approach-point h3{font-size:16px}.contact-banner{padding:25px;margin-block:40px;border-radius:22px}.contact-banner h2{font-size:27px}.contact-banner p{font-size:14px}.contact-banner .ea-eyebrow{font-size:10px}.contact-banner>.ea-button{font-size:14px}.footer-grid{grid-template-columns:1fr;gap:27px}.footer-grid>div:first-child{grid-column:auto}.footer-grid>div>a:not(.ea-brand),.ea-footer p{font-size:13px}.footer-bottom{font-size:11px;line-height:1.8}
+  .program-detail-top h1,.about-page>h1,.contact-page>h1{font-size:34px}.program-detail-top p,.page-intro,.about-grid p,.detail-section>p,.contact-panel>p{font-size:15px}.detail-photo{height:240px}.enroll-card .check-list li,.check-list li,.fine-print,.contact-address p{font-size:14px}.contact-panel .consult-buttons .ea-button{font-size:14px}.contact-guide ol{font-size:15px}.about-location p{font-size:14px}
+  .academy-login{gap:20px;padding-block:28px 40px}.login-editorial h1{font-size:30px}.login-editorial>p{font-size:14px}.academy-login-card{padding:26px}.academy-login-card .field,.academy-login-card>p{font-size:14px}.academy-login-card .login-help{font-size:13px}.academy-login-card input{font-size:16px;min-height:48px}
+  .learner-header .ea-nav{gap:24px}.learner-header .ea-brand{font-size:10px}.learner-account{gap:2px}.learner-header .ea-nav a{font-size:13px;min-height:48px}.learner-subnav>.ea-container{font-size:11px;min-height:42px}.learner-welcome{padding:23px;border-radius:23px}.learner-welcome h1{font-size:27px;line-height:1.4}.learner-welcome p{font-size:14px}.learner-welcome .ea-button{font-size:14px}.welcome-art{display:block;width:100%;height:auto;aspect-ratio:1.8;margin-top:24px;border-radius:18px}.welcome-art img{border-radius:18px}.welcome-sticker{font-size:14px;padding:7px 13px}.learner-section-heading h2{font-size:21px;display:flex;gap:8px;line-height:1.5}.count-bubble{display:inline-grid;font-size:12px;vertical-align:middle}.learner-section-heading>.ea-text-link{font-size:12px;white-space:nowrap}.learner-section-heading .ea-eyebrow{font-size:10px}.learning-card h3{font-size:20px}.learning-card-body{padding:24px}.assignment-meta{font-size:14px}.learning-card-bottom .ea-button{width:100%;font-size:14px}.learning-card-bottom>span{font-size:12px}.skill-tags span{font-size:12px}.learning-cover-label{font-size:9px}.learning-cover-word{font-size:33px}.student-empty p{font-size:14px}.learning-guide{padding:0}.learning-guide>div{padding:24px}.learning-guide .round-icon{position:static}.learning-guide h3{font-size:17px}.learning-guide p,.learning-guide a{font-size:14px}.learner-footer{font-size:11px;line-height:1.8}.learner-page-title>p{font-size:15px}.assignment-heading{font-size:14px}.assignment-heading>span:last-child{font-size:11px}.assignment-tip p{font-size:14px}.profile-card dl>div{font-size:14px}.profile-card>p{font-size:14px}
+  .exam-title h1{font-size:28px}.exam-title>p{font-size:15px}.exam-section{padding:24px 18px;border-radius:18px}.exam-section .reading-passage{font-size:16px;padding:16px}.exam-section .question h3{font-size:17px}.exam-section .question label.choice{font-size:16px;line-height:1.7;padding:14px;align-items:start}.exam-section legend{font-size:13px}.question-heading,.question-heading small{font-size:11px}.exam-navigator{order:-1;padding:20px}.exam-navigator>p{font-size:14px}.question-index button{width:44px;min-height:44px}.question-key{font-size:11px}.sticky-actions #save-state{font-size:12px}.sticky-actions .ea-button{font-size:13px;min-height:48px}.exam-result p{font-size:14px}.exam-breadcrumb{font-size:12px;gap:16px;line-height:1.7}
+}
+@media(prefers-reduced-motion:reduce){
+  .learning-card:hover,.program-card:hover .program-art>.icon{transform:none}
+}
+
+@media(max-width:360px){.ea-brand{font-size:9px}.ea-logo{width:34px;height:34px}.header-inner{gap:6px}.portal-link.ea-button{font-size:11px;padding:8px 10px}.hero-copy h1{font-size:36px}}
+@media(max-width:560px){
+  .public-app .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto 40px;gap:8px}
+  .public-app .ea-brand{min-width:0;font-size:9px;gap:6px}.public-app .ea-logo{width:34px;height:34px}
+  .public-app .portal-link.ea-button{font-size:11px;padding:8px 10px;min-height:44px;margin:0}
+  .public-app .ea-menu{min-width:40px;width:40px}
 }

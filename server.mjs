@@ -12,8 +12,8 @@ export function createServer(){return http.createServer(async(req,res)=>{
   upstream.setTimeout(120000,()=>upstream.destroy());upstream.on('error',()=>{if(!res.headersSent)res.writeHead(502,{'Content-Type':'application/json'});res.end(JSON.stringify({error:{message:'Không kết nối được backend. Vui lòng thử lại.'}}));});req.on('aborted',()=>upstream.destroy());req.pipe(upstream);return;
  }
  const path=req.url.split('?')[0];
- const asset=/^\/assets\/[a-z0-9-]+\.(jpg|ttf)$/.exec(path);
- const file=files[path]||(asset?[path.slice(1),asset[1]==='jpg'?'image/jpeg':'font/ttf']:null);
+ const asset=/^\/assets\/[a-z0-9-]+\.(jpg|png|ttf)$/.exec(path);
+ const file=files[path]||(asset?[path.slice(1),({'jpg':'image/jpeg','png':'image/png','ttf':'font/ttf'})[asset[1]]]:null);
  if(!file||!['GET','HEAD'].includes(req.method)){res.writeHead(404);return res.end('Not found');}
  try{const data=await readFile(new URL('./public/'+file[0],import.meta.url));res.writeHead(200,{'Content-Type':file[1]});res.end(req.method==='HEAD'?undefined:data);}catch(error){res.writeHead(error.code==='ENOENT'?404:500);res.end('Unable to load application');}
 });}
